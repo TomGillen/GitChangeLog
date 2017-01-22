@@ -1,0 +1,22 @@
+source https://nuget.org/api/v2
+framework >= net452
+nuget LibGit2Sharp 0.23.1
+nuget LibGit2Sharp.NativeBinaries 1.0.164
+nuget CommandLineParser prerelease
+
+group Build
+  source https://nuget.org/api/v2
+  
+  nuget GitVersion.CommandLine prerelease
+  nuget SourceLink.Fake
+  nuget FAKE
+  nuget FSharp.Core redirects: force
+  nuget FSharp.Data
+  nuget FSharp.Formatting
+
+group Test
+  source https://nuget.org/api/v2
+  
+  nuget xunit.core
+  nuget xunit.runner.console
+  nuget Shouldly

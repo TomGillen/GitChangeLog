@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{5D329AE8-5EB1-466D-BAF2-A87852BE82EB}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitChangeLogCore", "src\GitChangeLogCore\GitChangeLogCore.csproj", "{8BC1C4E1-690A-4F0B-A4EE-88E1E636BBB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitChangeLog.CommandLine", "src\GitChangeLog.CommandLine\GitChangeLog.CommandLine.csproj", "{08D67B7A-A86D-4623-A265-2470BD78E947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitChangeLog.Tests", "tests\GitChangeLog.Tests\GitChangeLog.Tests.csproj", "{CE401B49-20C8-4AE8-9926-5143356AF4CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BC1C4E1-690A-4F0B-A4EE-88E1E636BBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC1C4E1-690A-4F0B-A4EE-88E1E636BBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC1C4E1-690A-4F0B-A4EE-88E1E636BBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC1C4E1-690A-4F0B-A4EE-88E1E636BBB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D67B7A-A86D-4623-A265-2470BD78E947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D67B7A-A86D-4623-A265-2470BD78E947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D67B7A-A86D-4623-A265-2470BD78E947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D67B7A-A86D-4623-A265-2470BD78E947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE401B49-20C8-4AE8-9926-5143356AF4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE401B49-20C8-4AE8-9926-5143356AF4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE401B49-20C8-4AE8-9926-5143356AF4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE401B49-20C8-4AE8-9926-5143356AF4CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

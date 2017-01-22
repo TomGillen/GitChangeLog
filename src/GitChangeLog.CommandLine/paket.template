@@ -1,0 +1,27 @@
+type project
+title
+    GitChangeLog.CommandLine
+owners
+    Tom Gillen
+authors 
+    Tom Gillen
+projectUrl
+    https://github.com/TomGillen/GitChangeLog
+licenseUrl
+    https://github.com/TomGillen/GitChangeLog/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2017
+tags
+    git ci build changelog
+summary
+    Extract change logs from git annotated tags
+description
+    Extract change logs from git annotated tags.
+files
+    bin/Release/*.dll ==> tools
+    bin/Release/*.exe ==> tools
+    bin/Release/lib ==> tools/lib
+excludeddependencies
+    CommandLineParser
