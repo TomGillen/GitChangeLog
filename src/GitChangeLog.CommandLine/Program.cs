@@ -36,17 +36,16 @@ namespace GitChangeLog.CommandLine
         public string Repository { get; set; }
 
         [Option("header",
-            Default = "# Release Notes",
             HelpText = "Change log file header")]
         public string Header { get; set; }
 
         [Option("source-links",
-            Default = true,
+            Default = false,
             HelpText = "Enable links to source tree on github hosted repositories")]
         public bool SourceLinks { get; set; }
 
         [Option("compare-links",
-            Default = true,
+            Default = false,
             HelpText = "Enable links to comparisons with previous releases on github hosted repositories")]
         public bool CompareLinks { get; set; }
     }
