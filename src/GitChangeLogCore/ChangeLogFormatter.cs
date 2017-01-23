@@ -23,7 +23,7 @@ namespace GitChangeLog
                 var date = release.Annotation.Tagger.When.UtcDateTime;
                 var message = StripTitle(name, release.Annotation.Message).Trim();
                 
-                releaseNotes.AppendLine($"## {name} ({date:yyyy-mm-dd})");
+                releaseNotes.AppendLine($"## {name} ({date:yyyy-MM-dd})");
                 releaseNotes.AppendLine();
                 releaseNotes.AppendLine(message);
                 releaseNotes.AppendLine();
