@@ -1,6 +1,6 @@
 type project
 title
-    GitChangeLog.CommandLine
+    GitChangeLog CommandLine
 owners
     Tom Gillen
 authors 
@@ -12,7 +12,7 @@ licenseUrl
 requireLicenseAcceptance
     false
 copyright
-    Copyright 2017
+    Copyright 2017 Tom Gillen
 tags
     git ci build changelog
 summary
