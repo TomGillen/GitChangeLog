@@ -222,7 +222,7 @@ Target "SourceLink" (fun _ ->
 // Release Notes
 
 Target "ReleaseNotes" (fun _ ->
-    runExe "build/bin/GitChangeLog.CommandLine/GitChangeLog.exe" "-o build/RELEASE_NOTES.md" |> ignore
+    runExe "build/bin/GitChangeLog.CommandLine/GitChangeLog.exe" "collect -o build/RELEASE_NOTES.md" |> ignore
 )
 
 // --------------------------------------------------------------------------------------
@@ -243,6 +243,14 @@ Target "PublishNuget" (fun _ ->
 )
 
 Target "BuildPackage" DoNothing
+
+// --------------------------------------------------------------------------------------
+// Create Github Releases
+
+Target "GithubRelease" (fun _ ->
+    let token = getBuildParamOrDefault "token" (environVarOrFail "GITHUB_AUTH_TOKEN")
+    runExe "build/bin/GitChangeLog.CommandLine/GitChangeLog.exe" (sprintf "release --token %s" token) |> ignore
+)
 
 // --------------------------------------------------------------------------------------
 // Run all targets by default. Invoke 'build <Target>' to override
