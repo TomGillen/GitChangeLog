@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Octokit;
@@ -24,15 +21,29 @@ namespace GitChangeLog
             var remote = repo.Network.Remotes[remoteName];
             if (remote != null)
             {
-                var github = new Regex(@"(?<repo_base_url>https://github.com/(?<owner>[^/]+)/(?<name>[^/]+))\.git");
-                var match = github.Match(remote.Url);
-                if (match.Success)
+                var httpUrl = new Regex(@"(?<repo_base_url>https://github.com/(?<owner>[^/]+)/(?<name>[^/]+))\.git");
+                var httpMatch = httpUrl.Match(remote.Url);
+                if (httpMatch.Success)
                 {
                     return new GithubRepo
                     {
-                        Url = match.Groups["repo_base_url"].Value,
-                        Owner = match.Groups["owner"].Value,
-                        Name = match.Groups["name"].Value
+                        Url = httpMatch.Groups["repo_base_url"].Value,
+                        Owner = httpMatch.Groups["owner"].Value,
+                        Name = httpMatch.Groups["name"].Value
+                    };
+                }
+
+                var sshUrl = new Regex(@"git@github.com:(?<owner>[^/]+)/(?<name>[^/]+)\.git");
+                var sshMatch = sshUrl.Match(remote.Url);
+                if (sshMatch.Success)
+                {
+                    var owner = sshMatch.Groups["owner"].Value;
+                    var name = sshMatch.Groups["name"].Value;
+                    return new GithubRepo
+                    {
+                        Url = $"https://github.com/{owner}/{name}",
+                        Owner = owner,
+                        Name = name
                     };
                 }
             }
