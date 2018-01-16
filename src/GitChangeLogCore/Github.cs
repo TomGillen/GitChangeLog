@@ -134,12 +134,12 @@ namespace GitChangeLog
 
                 if (force || hasContentToSync)
                 {
-//                    await client.Repository.Release.Edit(owner, repoName, release.Id, new ReleaseUpdate
-//                    {
-//                        Name = tag.FriendlyName,
-//                        Body = tag.Annotation.Message,
-//                        Prerelease = tag.FriendlyName.Contains("-")
-//                    });
+                    await client.Repository.Release.Edit(owner, repoName, release.Id, new ReleaseUpdate
+                    {
+                        Name = tag.FriendlyName,
+                        Body = tag.Annotation.Message,
+                        Prerelease = tag.FriendlyName.Contains("-")
+                    });
                 }
             }
         }
